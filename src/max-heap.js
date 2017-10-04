@@ -40,6 +40,8 @@ class MaxHeap {
 			this.root = last;
 			if (last.parent === detached) {
 				this.parentNodes.unshift(last);
+			} else if (this.parentNodes.indexOf(last.parent) === -1) {
+				this.parentNodes.unshift(last.parent);
 			}
 			last.remove();
 			last.appendChild(detached.left);
