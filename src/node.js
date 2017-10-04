@@ -9,12 +9,13 @@ class Node {
 
 	appendChild(node) {
 		if (!this.left) {
-			node.parent = this;
 			this.left = node;
 		}
 		else if (!this.right) {
-			node.parent = this;
 			this.right = node;
+		}
+		if (node) {
+			node.parent = this;
 		}
 	}
 
